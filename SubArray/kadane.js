@@ -50,27 +50,41 @@
 
 // console.log(kadane(array1))
 
+// function kadane(array) {
+//   if (array == null || array.length == 0) {
+//     try {
+//       throw new Error("Array is null or does not exist");
+//     } catch (error) {
+//       console.error(`${error.name}: ${error.message}`);
+//       return;
+//     }
+//   }
+
+//   let maxSum = array[0];
+//   let maxEndingHere = array[0];
+
+//   for(let i = 1; i < array.length -1; i++){
+//     maxEndingHere = Math.max(maxEndingHere + array[i], array[i]);
+//     maxSum = Math.max(maxEndingHere, maxSum);
+//   }
+//   return maxSum;
+
+// }
+
+// console.log(kadane(array1));
+
 let array1 = [1, 2, -1, 2, -3, 2, -5];
 
-function kadane(array) {
-  if (array == null || array.length == 0) {
-    try {
-      throw new Error("Array is null or does not exist");
-    } catch (error) {
-      console.error(`${error.name}: ${error.message}`);
-      return;
-    }
-  }
-
+function kadane(array){
   let maxSum = array[0];
   let maxEndingHere = array[0];
 
-  for(let i = 1; i < array.length -1; i++){
+  for(let i = 1; i < array.length-1; i++){
     maxEndingHere = Math.max(maxEndingHere + array[i], array[i]);
     maxSum = Math.max(maxEndingHere, maxSum);
   }
-  return maxSum;
 
+  return maxSum;
 }
 
-console.log(kadane(array1));
+console.log(kadane(array1))
