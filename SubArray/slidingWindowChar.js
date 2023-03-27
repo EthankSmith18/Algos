@@ -37,37 +37,71 @@
 
 // console.log(slidingWindow(sentence));
 
+// let sentence = "whatwhywhere";
+
+// function slidingWindow(string){
+//   if(string == null || string.length == 0){
+//     return null
+//   }
+//   let hash = new Map();
+//   let start = 0;
+//   let end = 0;
+//   let result = [0,0]
+//   let longest = 1;
+//   hash.set(string.charAt(0), 0);
+
+//   while(end < string.length -1){
+//     end++;
+//     let toAdd = string.charAt(end);
+//     if(hash.has(toAdd) && hash.get(toAdd) >= start){
+//       start = hash.get(toAdd) + 1;
+//     }
+//     hash.set(toAdd, end);
+
+//     if(end - start + 1 > longest){
+//       longest = end - start + 1;
+//       result = [];
+//       result.push(start);
+//       result.push(end)
+//     }
+//   }
+
+//   return result;
+
+// }
+
+// console.log(slidingWindow(sentence));
+
 let sentence = "whatwhywhere";
 
-function slidingWindow(string){
-  if(string == null || string.length == 0){
-    return null
+function slidingWindow(string) {
+  if (string == null || string.length == 0) {
+    return null;
   }
-  let hash = new Map();
   let start = 0;
   let end = 0;
-  let result = [0,0]
+  let result = [0, 0];
   let longest = 1;
-  hash.set(string.charAt(0), 0);
+  let map = new Map();
+  map.set(string.charAt(0), 0);
 
-  while(end < string.length -1){
+  while (end < string.length - 1) {
     end++;
     let toAdd = string.charAt(end);
-    if(hash.has(toAdd) && hash.get(toAdd) >= start){
-      start = hash.get(toAdd) + 1;
+    if (map.has(toAdd) && map.get(toAdd) >= start) {
+      start = map.get(toAdd) + 1;
     }
-    hash.set(toAdd, end);
+    map.set(toAdd, end);
 
-    if(end - start + 1 > longest){
+    if (end - start + 1 > longest) {
       longest = end - start + 1;
       result = [];
       result.push(start);
-      result.push(end)
+      result.push(end);
     }
   }
 
   return result;
-
 }
 
 console.log(slidingWindow(sentence));
