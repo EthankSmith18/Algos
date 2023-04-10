@@ -8,24 +8,44 @@ tallies = {
   'M':1000,
 }
 
-let number = 'IXVI'
+// let number = 'IXVI'
+
+// function romanToNumber(number){
+//   let sum = 0;
+
+//   for(let i = 0; i < number.length-1; i++){
+//     let left = number[i];
+//     let right = number[i + 1];
+//     if(tallies[left] < tallies[right]){
+//       sum -= tallies[left];
+//     }
+//     else{
+//       sum += tallies[left]
+//     }
+//   }
+//   sum += tallies[number[number.length-1]];
+//   return sum;
+
+// }
+
+// console.log(romanToNumber(number))
+
+let number = 'IV'
 
 function romanToNumber(number){
   let sum = 0;
 
   for(let i = 0; i < number.length-1; i++){
     let left = number[i];
-    let right = number[i + 1];
+    let right = number[i+1];
     if(tallies[left] < tallies[right]){
       sum -= tallies[left];
-    }
-    else{
-      sum += tallies[left]
+    } else{
+      sum  += tallies[left]
     }
   }
   sum += tallies[number[number.length-1]];
   return sum;
-
 }
 
-console.log(romanToNumber(number))
+console.log(romanToNumber(number));
