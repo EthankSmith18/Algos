@@ -30,10 +30,11 @@ tallies = {
 
 // console.log(romanToNumber(number))
 
-let number = 'IV'
+let number = 'IVVV'
 
 function romanToNumber(number){
   let sum = 0;
+  console.log(number.length)
 
   for(let i = 0; i < number.length-1; i++){
     let left = number[i];
