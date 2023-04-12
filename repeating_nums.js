@@ -3,13 +3,72 @@
 // Input: nums = [ 1,5,1,4,5,2,1,6,6,1]
 // Output: 1. (1 occurs 4 times; 5 & 6 appear twice and 4 occurs once so they are less common.)
 
-// const nums1 = [1, 1, 2, 2];
+const nums1 = [1, 1, 2, 2];
 
-// const nums2 = [1, 2, 3, 2, 2, 4];
+const nums2 = [1, 2, 3, 2, 2, 4];
 
-// const nums3 = [1];
+const nums3 = [1];
 
 // {1:2, 2:2}
+
+function repeatElements(numbers){
+  const tracker = {};
+  let max = 0;
+  let element = [];
+
+  for(let i = 0; i < numbers.length; i++){
+    let currentNumber = numbers[i];
+    let currentValue = tracker[currentNumber]
+    
+
+    if(tracker[currentNumber]){
+      tracker[currentNumber] += 1;
+      if(tracker[currentNumber] > max){
+        max = numbers[i];
+        element = [numbers[i]]
+      } else if(currentValue === max){
+        element.push(numbers[i])
+      }
+    } else{
+      tracker[numbers[i]] = 1;
+      
+        if(tracker[currentNumber] > max){
+          max = tracker[currentNumber];
+          element = numbers[i]
+        }
+    }
+  }
+
+  return element;
+}
+
+console.log(repeatElements(nums1))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // function repeat(numbers) {
 //   const count = {};
@@ -45,11 +104,11 @@
 
 // console.log(repeat(nums3));
 
-const nums1 = [1, 1, 2, 2];
+// const nums1 = [1, 1, 2, 2];
 
-const nums2 = [1, 2, 3, 3, 3, 4];
+// const nums2 = [1, 2, 3, 3, 3, 4];
 
-const nums3 = [1];
+// const nums3 = [1];
 
 // {1:2, 2:2}
 
@@ -82,34 +141,34 @@ const nums3 = [1];
 // console.log(repeat(nums2));
 
 
-function repeat(numbers){
-  if(numbers.length === 1){
-    return([numbers[0]])
-  }
-  const count = {};
-  let max = 0;
-  let element = [];
+// function repeat(numbers){
+//   if(numbers.length === 1){
+//     return([numbers[0]])
+//   }
+//   const count = {};
+//   let max = 0;
+//   let element = [];
 
-  for(let i = 0; i <= numbers.length-1; i++){
+//   for(let i = 0; i <= numbers.length-1; i++){
 
-    let currentKey = numbers[i];
-    let currentValue = count[currentKey];
+//     let currentKey = numbers[i];
+//     let currentValue = count[currentKey];
 
-    if(count[currentKey]){
-      count[currentKey] += 1;
-      if(currentValue === max){
-        element.push(currentKey);
-      }
-      else if(currentValue > max){
-        element = [currentKey];
-        max = currentValue;
-      } 
-    } else{
-      count[currentKey] = 1;
-    }
-  }
-  console.log(count)
-  return element;
-}
+//     if(count[currentKey]){
+//       count[currentKey] += 1;
+//       if(currentValue === max){
+//         element.push(currentKey);
+//       }
+//       else if(currentValue > max){
+//         element = [currentKey];
+//         max = currentValue;
+//       } 
+//     } else{
+//       count[currentKey] = 1;
+//     }
+//   }
+//   console.log(count)
+//   return element;
+// }
 
-console.log(repeat(nums3))
+// console.log(repeat(nums3))
