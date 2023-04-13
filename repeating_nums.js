@@ -18,21 +18,22 @@ function repeatElements(numbers){
 
   for(let i = 0; i < numbers.length; i++){
     let currentNumber = numbers[i];
+    let currentValue = tracker[currentNumber];
     
 
-    if(tracker[currentNumber]){
+    if(currentValue){
       tracker[currentNumber] += 1;
-      if(tracker[currentNumber] > max){
-        max = tracker[currentNumber];
+      if(currentValue > max){
+        max = currentValue;
         element = [numbers[i]]
-      } else if(tracker[currentNumber] === max){
+      } else if(currentValue === max){
         element.push(numbers[i])
       }
     } else{
       tracker[numbers[i]] = 1;
       
-        if(tracker[currentNumber] > max){
-          max = tracker[currentNumber];
+        if(currentValue > max){
+          max = currentValue;
           element = numbers[i]
         }
     }

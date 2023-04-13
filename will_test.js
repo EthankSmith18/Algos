@@ -64,7 +64,7 @@ console.log(repeat(nums1))
     will[1] = 2;
     {
       ethan: will,
-      1: 2,
+      '1': 2,
     }
 
     will.ethan;
